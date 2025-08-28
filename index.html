@@ -1,402 +1,415 @@
-export default function Page() {
-  return (
-    <div className="min-h-screen bg-white text-gray-900">
-      {/* Hero */}
-      <header className="relative isolate overflow-hidden">
-        <div className="mx-auto max-w-6xl px-6 pt-12 pb-10">
-          <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight">Dangar Island 一日游 · 轻松版</h1>
-          <p className="mt-3 text-lg md:text-xl text-gray-600">按你的偏好：<span className="font-semibold">09:50</span> Central 出发 · <span className="font-semibold">11:40</span> 渡轮上岛 · <span className="font-semibold">16:25</span> 渡轮返程 · <span className="font-semibold">17:23</span> 火车回城（约 1 小时到 Central）。</p>
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dangar Island 一日游 · 轻松版</title>
+  <!-- 使用 Tailwind 的官方 CDN，免构建即可在 GitHub Pages 运行 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="description" content="Dangar Island 一日游行程：09:50 Central 出发 · 11:40 渡轮上岛 · 16:25 渡轮返程 · 17:23 火车回城，含官方渡轮时刻表整理、携带清单、注意事项与无人机指南" />
+</head>
+<body class="min-h-screen bg-white text-gray-900">
+  <!-- Hero -->
+  <header class="relative isolate overflow-hidden">
+    <div class="mx-auto max-w-6xl px-6 pt-12 pb-10">
+      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">Dangar Island 一日游 · 轻松版</h1>
+      <p class="mt-3 text-lg md:text-xl text-gray-600">按你的偏好：<span class="font-semibold">09:50</span> Central 出发 · <span class="font-semibold">11:40</span> 渡轮上岛 · <span class="font-semibold">16:25</span> 渡轮返程 · <span class="font-semibold">17:23</span> 火车回城（约 1 小时到 Central）。</p>
 
-          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-            {[
-              { label: "去程火车", value: "09:50 Central → Hawkesbury River" },
-              { label: "上岛渡轮", value: "11:40 Brooklyn → Dangar Island" },
-              { label: "返程渡轮", value: "16:25 Dangar → Brooklyn" },
-              { label: "回程火车", value: "17:23 Hawkesbury River → Central" },
-            ].map((item) => (
-              <div key={item.label} className="rounded-2xl border border-gray-200 bg-gray-50 p-4 shadow-sm">
-                <div className="text-sm text-gray-500">{item.label}</div>
-                <div className="mt-1 font-semibold">{item.value}</div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-6 flex flex-wrap gap-3">
-            <a href="https://brooklynferryservice.com.au/Timetable.php" target="_blank" className="inline-flex items-center rounded-xl border px-4 py-2 text-sm font-medium hover:bg-gray-50">查看官方渡轮时刻表 ↗</a>
-            <a href="https://transportnsw.info/trip#/" target="_blank" className="inline-flex items-center rounded-xl border px-4 py-2 text-sm font-medium hover:bg-gray-50">NSW Trip Planner ↗</a>
-          </div>
-
-          <p className="mt-3 text-sm text-gray-500">温馨提示：实际时刻可能调整，请以出发当天的官方时刻表为准。</p>
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        <div class="rounded-2xl border border-gray-200 bg-gray-50 p-4 shadow-sm">
+          <div class="text-sm text-gray-500">去程火车</div>
+          <div class="mt-1 font-semibold">09:50 Central → Hawkesbury River</div>
         </div>
-      </header>
-
-      {/* 行程表 */}
-      <section className="mx-auto max-w-6xl px-6 py-10">
-        <h2 className="text-2xl md:text-3xl font-bold">当日行程安排（工作日示例）</h2>
-        <div className="mt-4 overflow-x-auto rounded-2xl border">
-          <table className="min-w-full divide-y divide-gray-200 text-sm">
-            <thead className="bg-gray-50">
-              <tr>
-                <th className="px-4 py-3 text-left font-semibold">时间</th>
-                <th className="px-4 py-3 text-left font-semibold">安排</th>
-                <th className="px-4 py-3 text-left font-semibold">说明</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-100">
-              <tr>
-                <td className="px-4 py-3 whitespace-nowrap">09:30 – 09:45</td>
-                <td className="px-4 py-3">Central 集合 / 采购水与零食</td>
-                <td className="px-4 py-3">岛上商店有限，建议自带饮水、小食。</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-3 whitespace-nowrap">09:50 – 10:50</td>
-                <td className="px-4 py-3">火车 Central → Hawkesbury River</td>
-                <td className="px-4 py-3">约 1 小时，出站步行约 5 分钟到布鲁克林码头。</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-3 whitespace-nowrap">11:40 – 12:00</td>
-                <td className="px-4 py-3">渡轮 Brooklyn → Dangar Island</td>
-                <td className="px-4 py-3">上船刷 Opal/银行卡，航程约 15–20 分钟。</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-3 whitespace-nowrap">12:00 – 12:40</td>
-                <td className="px-4 py-3">午餐：Dangar Island Depot Café</td>
-                <td className="px-4 py-3">建议提早点餐，常见营业至 16:00。</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-3 whitespace-nowrap">12:40 – 15:30</td>
-                <td className="px-4 py-3">环岛徒步（约 4 km）+ 布拉德利海滩</td>
-                <td className="px-4 py-3">2–3 小时慢逛，注意牡蛎壳锋利，穿包脚鞋。</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-3 whitespace-nowrap">15:30 – 16:10</td>
-                <td className="px-4 py-3">自由活动：咖啡馆 / Bowling Club / 海边小憩</td>
-                <td className="px-4 py-3">补水、防晒、拍照打卡～</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-3 whitespace-nowrap">16:25 – 16:45</td>
-                <td className="px-4 py-3">渡轮 Dangar → Brooklyn</td>
-                <td className="px-4 py-3">建议提前 5–10 分钟到码头排队。</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-3 whitespace-nowrap">17:23 – 约 18:23</td>
-                <td className="px-4 py-3">火车 Hawkesbury River → Central</td>
-                <td className="px-4 py-3">约 1 小时到达 Central，结束行程。</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="rounded-2xl border border-gray-200 bg-gray-50 p-4 shadow-sm">
+          <div class="text-sm text-gray-500">上岛渡轮</div>
+          <div class="mt-1 font-semibold">11:40 Brooklyn → Dangar Island</div>
         </div>
-      </section>
-
-      {/* 官方渡轮时刻表（整理版） */}
-      <section className="mx-auto max-w-6xl px-6 pb-8">
-        <h2 className="text-2xl md:text-3xl font-bold">Brooklyn Ferry 渡轮时刻表（摘录）</h2>
-        <p className="mt-2 text-sm text-gray-500">红色时间为 “如有需要/需提前联系” 停靠。周末 7:00am 仅周六；周末 7:00pm 仅夏令时运行。以官方发布为准。</p>
-
-        {/* 工作日 */}
-        <div className="mt-4 rounded-2xl border overflow-x-auto">
-          <div className="bg-gray-50 px-4 py-3 font-semibold">Monday – Friday</div>
-          <table className="min-w-full text-sm">
-            <thead>
-              <tr className="bg-gray-50">
-                <th className="px-4 py-2 text-left">Brooklyn (Departs)</th>
-                <th className="px-4 py-2 text-left">Wobby</th>
-                <th className="px-4 py-2 text-left">Dangar</th>
-                <th className="px-4 py-2 text-left">Wobby</th>
-                <th className="px-4 py-2 text-left">Brooklyn (Arrives)</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y">
-              <tr>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">6:10 am</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">6:25 am</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2">6:40 am</td>
-                <td className="px-4 py-2 text-red-600">6:55 am</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">7:25 am</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2">7:40 am</td>
-                <td className="px-4 py-2 text-red-600">7:55 am</td>
-                <td className="px-4 py-2">8:15 am</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">8:30 am</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2">8:40 am</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">9:10 am</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2">9:25 am</td>
-                <td className="px-4 py-2 text-red-600">9:40 am</td>
-                <td className="px-4 py-2">9:55 am</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">10:10 am</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2">10:15 am</td>
-                <td className="px-4 py-2">10:30 am</td>
-                <td className="px-4 py-2">10:55 am</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">11:10 am</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2">11:40 am</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">11:55 am</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">12:10 pm</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2">1:00 pm</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">1:15 pm</td>
-                <td className="px-4 py-2">1:30 pm</td>
-                <td className="px-4 py-2">1:45 pm</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2">2:00 pm</td>
-                <td className="px-4 py-2">2:15 pm</td>
-                <td className="px-4 py-2">2:30 pm</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">2:45 pm</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2">3:20 pm</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">3:35 pm</td>
-                <td className="px-4 py-2">3:50 pm</td>
-                <td className="px-4 py-2">4:05 pm</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2">4:10 pm</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">4:25 pm</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">4:40 pm</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2">4:45 pm</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">5:00 pm</td>
-                <td className="px-4 py-2">5:15 pm</td>
-                <td className="px-4 py-2">5:30 pm</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2">5:45 pm</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">6:00 pm</td>
-                <td className="px-4 py-2 text-red-600">6:15 pm</td>
-                <td className="px-4 py-2">6:30 pm</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2">6:45 pm</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">7:00 pm</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">7:15 pm</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2">7:15 pm</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">7:30 pm</td>
-                <td className="px-4 py-2 text-red-600">7:45 pm</td>
-                <td className="px-4 py-2">8:00 pm</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2">8:05 pm</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2 italic">终止于 Dangar Island</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="rounded-2xl border border-gray-200 bg-gray-50 p-4 shadow-sm">
+          <div class="text-sm text-gray-500">返程渡轮</div>
+          <div class="mt-1 font-semibold">16:25 Dangar → Brooklyn</div>
         </div>
-
-        {/* 周末与公共假期 */}
-        <div className="mt-8 rounded-2xl border overflow-x-auto">
-          <div className="bg-gray-50 px-4 py-3 font-semibold">Sat / Sun & Public Holidays</div>
-          <table className="min-w-full text-sm">
-            <thead>
-              <tr className="bg-gray-50">
-                <th className="px-4 py-2 text-left">Brooklyn (Departs)</th>
-                <th className="px-4 py-2 text-left">Wobby</th>
-                <th className="px-4 py-2 text-left">Dangar</th>
-                <th className="px-4 py-2 text-left">Wobby</th>
-                <th className="px-4 py-2 text-left">Brooklyn (Arrives)</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y">
-              <tr>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">7:00 am<span className="text-xs"> #（仅周六）</span></td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2 text-red-600">7:15 am</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2">7:30 am</td>
-                <td className="px-4 py-2">7:45 am</td>
-                <td className="px-4 py-2">8:00 am</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">8:15 am</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2">8:30 am</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">8:45 am</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">9:00 am</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2">9:15 am</td>
-                <td className="px-4 py-2">9:30 am</td>
-                <td className="px-4 py-2">9:45 am</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">10:00 am</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2">10:00 am</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">10:15 am</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">10:30 am</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2">11:00 am</td>
-                <td className="px-4 py-2">11:15 am</td>
-                <td className="px-4 py-2">11:30 am</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">11:45 am</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2">12:00 pm</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">12:15 pm</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">12:30 pm</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2">1:30 pm</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">1:45 pm</td>
-                <td className="px-4 py-2">2:00 pm</td>
-                <td className="px-4 py-2">2:15 pm</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2">2:30 pm</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">2:45 pm</td>
-                <td className="px-4 py-2">3:00 pm</td>
-                <td className="px-4 py-2">3:15 pm</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2">3:30 pm</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">3:45 pm</td>
-                <td className="px-4 py-2">4:00 pm</td>
-                <td className="px-4 py-2">4:15 pm</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2">4:30 pm</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">4:45 pm</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">5:00 pm</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2">5:00 pm</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">5:15 pm</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">5:30 pm</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2">6:00 pm</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">6:30 pm</td>
-                <td className="px-4 py-2 text-red-600">6:45 pm</td>
-                <td className="px-4 py-2">7:00 pm</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2">7:00 pm<span className="text-xs"> #（夏令时）</span></td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2">—</td>
-                <td className="px-4 py-2 italic">终止于 Dangar Island</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="rounded-2xl border border-gray-200 bg-gray-50 p-4 shadow-sm">
+          <div class="text-sm text-gray-500">回程火车</div>
+          <div class="mt-1 font-semibold">17:23 Hawkesbury River → Central</div>
         </div>
+      </div>
 
-        <p className="mt-3 text-xs text-gray-500">以上为对官方图表的整理展示，仅作参考，请以官网当天发布为准；红色表示“如需停靠需提前联系”。</p>
-      </section>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="https://brooklynferryservice.com.au/Timetable.php" target="_blank" class="inline-flex items-center rounded-xl border px-4 py-2 text-sm font-medium hover:bg-gray-50">查看官方渡轮时刻表 ↗</a>
+        <a href="https://transportnsw.info/trip#/" target="_blank" class="inline-flex items-center rounded-xl border px-4 py-2 text-sm font-medium hover:bg-gray-50">NSW Trip Planner ↗</a>
+      </div>
 
-      {/* 装备清单 */}
-      <section className="mx-auto max-w-6xl px-6 py-10">
-        <h2 className="text-2xl md:text-3xl font-bold">带什么（What to bring）</h2>
-        <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm leading-6">
-          <li className="rounded-2xl border p-4">🪪 Opal 卡 / 支持感应的银行卡（上船刷卡）</li>
-          <li className="rounded-2xl border p-4">💧 水（至少 1–1.5 L / 人）& 轻便零食</li>
-          <li className="rounded-2xl border p-4">🧴 防晒：帽子、墨镜、防晒霜、薄外套</li>
-          <li className="rounded-2xl border p-4">👟 舒适步鞋（海滩牡蛎壳很锋利，建议包脚鞋）</li>
-          <li className="rounded-2xl border p-4">🧻 小毛巾 / 湿巾、垃圾袋（带走自己的垃圾）</li>
-          <li className="rounded-2xl border p-4">🔋 移动电源 & 备用电量</li>
-          <li className="rounded-2xl border p-4">🦟 驱蚊用品（林间徒步很有用）</li>
-          <li className="rounded-2xl border p-4">🏖️ 喜欢下水可带泳衣/拖鞋（视潮汐和天气）</li>
-          <li className="rounded-2xl border p-4">🐶 带宠物？须笼装或口罩并牵引，遵守船务规定</li>
-        </ul>
-      </section>
-
-      {/* 注意事项 */}
-      <section className="mx-auto max-w-6xl px-6 pb-16">
-        <h2 className="text-2xl md:text-3xl font-bold">注意事项 & 小贴士</h2>
-        <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm leading-6">
-          <div className="rounded-2xl border p-4">
-            <h3 className="font-semibold">交通与支付</h3>
-            <ul className="mt-2 list-disc pl-5 space-y-1">
-              <li>渡轮已纳入 Opal 体系，上下船刷卡（或支持感应的银行卡）。</li>
-              <li>岛上没有机动车，主要以步行为主。</li>
-              <li>岛上没有 ATM，商家多为电子支付。</li>
-            </ul>
-          </div>
-          <div className="rounded-2xl border p-4">
-            <h3 className="font-semibold">徒步与安全</h3>
-            <ul className="mt-2 list-disc pl-5 space-y-1">
-              <li>海滩有锋利牡蛎壳与碎石，务必穿包脚鞋、谨慎下水。</li>
-              <li>夏季阳光强烈，注意补水与补涂防晒；林荫处注意蚊虫。</li>
-              <li>尊重居民社区安宁，垃圾带走，不采集贝壳和石头。</li>
-            </ul>
-          </div>
-          <div className="rounded-2xl border p-4">
-            <h3 className="font-semibold">变更与应急</h3>
-            <ul className="mt-2 list-disc pl-5 space-y-1">
-              <li>遇到轨道维护或恶劣天气，船班/火车可能调整或延误。</li>
-              <li>临出发前，再次核对 <span className="underline">官方渡轮时刻表</span> 与 <span className="underline">NSW Trip Planner</span>。</li>
-              <li>渡轮如需临时停靠（Wobby 等），请按官方说明提前联系船务。</li>
-            </ul>
-          </div>
-          <div className="rounded-2xl border p-4">
-            <h3 className="font-semibold">可选加分项</h3>
-            <ul className="mt-2 list-disc pl-5 space-y-1">
-              <li>日落前在布拉德利海滩拍照，光线很美～</li>
-              <li>在 Bowling Club 来一杯，或在 Depot 来一份甜点 🍰</li>
-              <li>若想更松弛，可改坐更晚的火车（视当日时刻）。</li>
-            </ul>
-          </div>
-        </div>
-        <p className="mt-4 text-xs text-gray-500">本页仅为出行小抄与灵感清单；请以当天官方发布信息为准。</p>
-      </section>
+      <p class="mt-3 text-sm text-gray-500">温馨提示：实际时刻可能调整，请以出发当天的官方时刻表为准。</p>
     </div>
-  );
-}
+  </header>
+
+  <!-- 行程表 -->
+  <section class="mx-auto max-w-6xl px-6 py-10">
+    <h2 class="text-2xl md:text-3xl font-bold">当日行程安排（工作日示例）</h2>
+    <div class="mt-4 overflow-x-auto rounded-2xl border">
+      <table class="min-w-full divide-y divide-gray-200 text-sm">
+        <thead class="bg-gray-50">
+          <tr>
+            <th class="px-4 py-3 text-left font-semibold">时间</th>
+            <th class="px-4 py-3 text-left font-semibold">安排</th>
+            <th class="px-4 py-3 text-left font-semibold">说明</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100">
+          <tr>
+            <td class="px-4 py-3 whitespace-nowrap">09:30 – 09:45</td>
+            <td class="px-4 py-3">Central 集合 / 采购水与零食</td>
+            <td class="px-4 py-3">岛上商店有限，建议自带饮水、小食。</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 whitespace-nowrap">09:50 – 10:50</td>
+            <td class="px-4 py-3">火车 Central → Hawkesbury River</td>
+            <td class="px-4 py-3">约 1 小时，出站步行约 5 分钟到布鲁克林码头。</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 whitespace-nowrap">11:40 – 12:00</td>
+            <td class="px-4 py-3">渡轮 Brooklyn → Dangar Island</td>
+            <td class="px-4 py-3">上船刷 Opal/银行卡，航程约 15–20 分钟。</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 whitespace-nowrap">12:00 – 12:40</td>
+            <td class="px-4 py-3">午餐：Dangar Island Depot Café</td>
+            <td class="px-4 py-3">建议提早点餐，常见营业至 16:00。</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 whitespace-nowrap">12:40 – 15:30</td>
+            <td class="px-4 py-3">环岛徒步（约 4 km）+ 布拉德利海滩</td>
+            <td class="px-4 py-3">2–3 小时慢逛，注意牡蛎壳锋利，穿包脚鞋。</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 whitespace-nowrap">15:30 – 16:10</td>
+            <td class="px-4 py-3">自由活动：咖啡馆 / Bowling Club / 海边小憩</td>
+            <td class="px-4 py-3">补水、防晒、拍照打卡～</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 whitespace-nowrap">16:25 – 16:45</td>
+            <td class="px-4 py-3">渡轮 Dangar → Brooklyn</td>
+            <td class="px-4 py-3">建议提前 5–10 分钟到码头排队。</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 whitespace-nowrap">17:23 – 约 18:23</td>
+            <td class="px-4 py-3">火车 Hawkesbury River → Central</td>
+            <td class="px-4 py-3">约 1 小时到达 Central，结束行程。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 官方渡轮时刻表（整理版） -->
+  <section class="mx-auto max-w-6xl px-6 pb-8">
+    <h2 class="text-2xl md:text-3xl font-bold">Brooklyn Ferry 渡轮时刻表（摘录）</h2>
+    <p class="mt-2 text-sm text-gray-500">红色时间为 “如有需要/需提前联系” 停靠。周末 7:00am 仅周六；周末 7:00pm 仅夏令时运行。以官方发布为准。</p>
+
+    <!-- 工作日 -->
+    <div class="mt-4 rounded-2xl border overflow-x-auto">
+      <div class="bg-gray-50 px-4 py-3 font-semibold">Monday – Friday</div>
+      <table class="min-w-full text-sm">
+        <thead>
+          <tr class="bg-gray-50">
+            <th class="px-4 py-2 text-left">Brooklyn (Departs)</th>
+            <th class="px-4 py-2 text-left">Wobby</th>
+            <th class="px-4 py-2 text-left">Dangar</th>
+            <th class="px-4 py-2 text-left">Wobby</th>
+            <th class="px-4 py-2 text-left">Brooklyn (Arrives)</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y">
+          <tr>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">6:10 am</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">6:25 am</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2">6:40 am</td>
+            <td class="px-4 py-2 text-red-600">6:55 am</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">7:25 am</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2">7:40 am</td>
+            <td class="px-4 py-2 text-red-600">7:55 am</td>
+            <td class="px-4 py-2">8:15 am</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">8:30 am</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2">8:40 am</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">9:10 am</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2">9:25 am</td>
+            <td class="px-4 py-2 text-red-600">9:40 am</td>
+            <td class="px-4 py-2">9:55 am</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">10:10 am</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2">10:15 am</td>
+            <td class="px-4 py-2">10:30 am</td>
+            <td class="px-4 py-2">10:55 am</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">11:10 am</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2">11:40 am</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">11:55 am</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">12:10 pm</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2">1:00 pm</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">1:15 pm</td>
+            <td class="px-4 py-2">1:30 pm</td>
+            <td class="px-4 py-2">1:45 pm</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2">2:00 pm</td>
+            <td class="px-4 py-2">2:15 pm</td>
+            <td class="px-4 py-2">2:30 pm</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">2:45 pm</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2">3:20 pm</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">3:35 pm</td>
+            <td class="px-4 py-2">3:50 pm</td>
+            <td class="px-4 py-2">4:05 pm</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2">4:10 pm</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">4:25 pm</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">4:40 pm</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2">4:45 pm</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">5:00 pm</td>
+            <td class="px-4 py-2">5:15 pm</td>
+            <td class="px-4 py-2">5:30 pm</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2">5:45 pm</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">6:00 pm</td>
+            <td class="px-4 py-2 text-red-600">6:15 pm</td>
+            <td class="px-4 py-2">6:30 pm</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2">6:45 pm</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">7:00 pm</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">7:15 pm</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2">7:15 pm</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">7:30 pm</td>
+            <td class="px-4 py-2 text-red-600">7:45 pm</td>
+            <td class="px-4 py-2">8:00 pm</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2">8:05 pm</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2 italic">终止于 Dangar Island</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 周末与公共假期 -->
+    <div class="mt-8 rounded-2xl border overflow-x-auto">
+      <div class="bg-gray-50 px-4 py-3 font-semibold">Sat / Sun & Public Holidays</div>
+      <table class="min-w-full text-sm">
+        <thead>
+          <tr class="bg-gray-50">
+            <th class="px-4 py-2 text-left">Brooklyn (Departs)</th>
+            <th class="px-4 py-2 text-left">Wobby</th>
+            <th class="px-4 py-2 text-left">Dangar</th>
+            <th class="px-4 py-2 text-left">Wobby</th>
+            <th class="px-4 py-2 text-left">Brooklyn (Arrives)</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y">
+          <tr>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">7:00 am<span class="text-xs"> #（仅周六）</span></td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2 text-red-600">7:15 am</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2">7:30 am</td>
+            <td class="px-4 py-2">7:45 am</td>
+            <td class="px-4 py-2">8:00 am</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">8:15 am</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2">8:30 am</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">8:45 am</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">9:00 am</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2">9:15 am</td>
+            <td class="px-4 py-2">9:30 am</td>
+            <td class="px-4 py-2">9:45 am</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">10:00 am</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2">10:00 am</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">10:15 am</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">10:30 am</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2">11:00 am</td>
+            <td class="px-4 py-2">11:15 am</td>
+            <td class="px-4 py-2">11:30 am</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">11:45 am</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2">12:00 pm</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">12:15 pm</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">12:30 pm</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2">1:30 pm</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">1:45 pm</td>
+            <td class="px-4 py-2">2:00 pm</td>
+            <td class="px-4 py-2">2:15 pm</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2">2:30 pm</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">2:45 pm</td>
+            <td class="px-4 py-2">3:00 pm</td>
+            <td class="px-4 py-2">3:15 pm</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2">3:30 pm</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">3:45 pm</td>
+            <td class="px-4 py-2">4:00 pm</td>
+            <td class="px-4 py-2">4:15 pm</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2">4:30 pm</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">4:45 pm</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">5:00 pm</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2">5:00 pm</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">5:15 pm</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">5:30 pm</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2">6:00 pm</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">6:30 pm</td>
+            <td class="px-4 py-2 text-red-600">6:45 pm</td>
+            <td class="px-4 py-2">7:00 pm</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2">7:00 pm<span class="text-xs"> #（夏令时）</span></td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2">—</td>
+            <td class="px-4 py-2 italic">终止于 Dangar Island</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="mt-3 text-xs text-gray-500">以上为对官方图表的整理展示，仅作参考，请以官网当天发布为准；红色表示“如需停靠需提前联系”。</p>
+  </section>
+
+  <!-- 装备清单 -->
+  <section class="mx-auto max-w-6xl px-6 py-10">
+    <h2 class="text-2xl md:text-3xl font-bold">带什么（What to bring）</h2>
+    <ul class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm leading-6">
+      <li class="rounded-2xl border p-4">🪪 Opal 卡 / 支持感应的银行卡（上船刷卡）</li>
+      <li class="rounded-2xl border p-4">💧 水（至少 1–1.5 L / 人）& 轻便零食</li>
+      <li class="rounded-2xl border p-4">🧴 防晒：帽子、墨镜、防晒霜、薄外套</li>
+      <li class="rounded-2xl border p-4">👟 舒适步鞋（海滩牡蛎壳很锋利，建议包脚鞋）</li>
+      <li class="rounded-2xl border p-4">🧻 小毛巾 / 湿巾、垃圾袋（带走自己的垃圾）</li>
+      <li class="rounded-2xl border p-4">🔋 移动电源 & 备用电量</li>
+      <li class="rounded-2xl border p-4">🦟 驱蚊用品（林间徒步很有用）</li>
+      <li class="rounded-2xl border p-4">🏖️ 喜欢下水可带泳衣/拖鞋（视潮汐和天气）</li>
+      <li class="rounded-2xl border p-4">🐶 带宠物？须笼装或口罩并牵引，遵守船务规定</li>
+    </ul>
+  </section>
+
+  <!-- 注意事项 -->
+  <section class="mx-auto max-w-6xl px-6 pb-16">
+    <h2 class="text-2xl md:text-3xl font-bold">注意事项 & 小贴士</h2>
+    <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm leading-6">
+      <div class="rounded-2xl border p-4">
+        <h3 class="font-semibold">交通与支付</h3>
+        <ul class="mt-2 list-disc pl-5 space-y-1">
+          <li>渡轮已纳入 Opal 体系，上下船刷卡（或支持感应的银行卡）。</li>
+          <li>岛上没有机动车，主要以步行为主。</li>
+          <li>岛上没有 ATM，商家多为电子支付。</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl border p-4">
+        <h3 class="font-semibold">徒步与安全</h3>
+        <ul class="mt-2 list-disc pl-5 space-y-1">
+          <li>海滩有锋利牡蛎壳与碎石，务必穿包脚鞋、谨慎下水。</li>
+          <li>夏季阳光强烈，注意补水与补涂防晒；林荫处注意蚊虫。</li>
+          <li>尊重居民社区安宁，垃圾带走，不采集贝壳和石头。</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl border p-4">
+        <h3 class="font-semibold">无人机与摄影</h3>
+        <ul class="mt-2 list-disc pl-5 space-y-1">
+          <li>达格岛为居民区，飞无人机需遵守 CASA（澳大利亚民航安全局）规则。</li>
+          <li>与人和建筑物保持 ≥30m 距离，不要在人群/渡轮码头起飞。</li>
+          <li>尊重隐私，避免在居民住宅上空飞行。</li>
+          <li>较宽敞的航拍点：布拉德利海滩、岛北端空旷区域（视风力与潮汐）。</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl border p-4">
+        <h3 class="font-semibold">变更与应急</h3>
+        <ul class="mt-2 list-disc pl-5 space-y-1">
+          <li>遇轨道维护或恶劣天气，船班/火车可能调整或延误。</li>
+          <li>临出发前，再次核对 <span class="underline">官方渡轮时刻表</span> 与 <span class="underline">NSW Trip Planner</span>。</li>
+          <li>渡轮如需临时停靠（Wobby 等），请按官方说明提前联系船务。</li>
+        </ul>
+      </div>
+    </div>
+    <p class="mt-4 text-xs text-gray-500">本页仅为出行小抄与灵感清单；请以当天官方发布信息为准。</p>
+  </section>
+</body>
+</html>
